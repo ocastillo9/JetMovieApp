@@ -1,6 +1,7 @@
 package com.bawp.movieapp.screens.home
 
 import android.util.Log
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -18,6 +19,7 @@ import com.bawp.movieapp.model.getMovies
 import com.bawp.movieapp.navagation.MovieScreens
 import com.bawp.movieapp.widgets.MovieRow
 
+@ExperimentalAnimationApi
 @Composable
 fun HomeScreen(navController: NavController) {
     Scaffold(topBar = {
@@ -34,6 +36,7 @@ fun HomeScreen(navController: NavController) {
 
 }
 
+@ExperimentalAnimationApi
 @Composable
 fun MainContent(
     navController: NavController,

@@ -1,5 +1,6 @@
 package com.bawp.movieapp.navagation
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -9,6 +10,7 @@ import androidx.navigation.navArgument
 import com.bawp.movieapp.screens.home.HomeScreen
 import com.bawp.movieapp.screens.details.DetailsScreen
 
+@ExperimentalAnimationApi
 @Composable
 fun MovieNavigation() {
     val navController = rememberNavController()

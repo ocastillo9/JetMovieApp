@@ -4,7 +4,7 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -54,7 +54,7 @@ fun DetailsScreen(navController: NavController,
          Spacer(modifier = Modifier.height(8.dp))
          Divider()
          Text(text = "Movie Images")
-         HorizontalScrollableImageView(newMovieList)
+         VerticalScrollableImageView(newMovieList)
      }
     }
     }
@@ -65,10 +65,12 @@ fun DetailsScreen(navController: NavController,
 }
 
 @Composable
-private fun HorizontalScrollableImageView(newMovieList: List<Movie>) {
-    LazyRow {
+private fun VerticalScrollableImageView(newMovieList: List<Movie>) {
+    LazyColumn {
         items(newMovieList[0].images) { image ->
-            Card(modifier = Modifier.padding(12.dp).size(240.dp), elevation = 5.dp) {
+            Card(modifier = Modifier
+                .padding(6.dp)
+                .size(240.dp), elevation = 5.dp) {
                 Image(painter = rememberImagePainter(data = image),
                     contentDescription = "Movie Poster")
 
